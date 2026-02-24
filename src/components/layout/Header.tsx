@@ -3,6 +3,7 @@ import { Github, Layers } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
+import { ThemeToggle } from '@/components/layout/ThemeToggle'
 
 const navItems = [
   { label: '버튼', href: '#buttons' },
@@ -34,18 +35,21 @@ export function Header() {
           ))}
         </nav>
 
-        {/* GitHub 링크 */}
-        <Button variant='outline' size='sm' asChild>
-          <a
-            href='https://github.com'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex items-center gap-2'
-          >
-            <Github className='h-4 w-4' />
-            <span className='hidden sm:inline'>GitHub</span>
-          </a>
-        </Button>
+        {/* 우측 액션 그룹 */}
+        <div className='flex items-center gap-2'>
+          <ThemeToggle />
+          <Button variant='outline' size='sm' asChild>
+            <a
+              href='https://github.com'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center gap-2'
+            >
+              <Github className='h-4 w-4' />
+              <span className='hidden sm:inline'>GitHub</span>
+            </a>
+          </Button>
+        </div>
       </div>
       <Separator />
     </header>
